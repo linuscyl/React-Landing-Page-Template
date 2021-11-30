@@ -1,15 +1,15 @@
 {
   "Header": {
-    "title": "Hello Kathy I am boring.",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+    "title": "Hello.  My name is Linus.",
+    "paragraph": "This page is developed by ReactJs. CICD by Buddy.  Hosted in S3 bucket."
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+    "paragraph": "My name is Linus.  I am a genius.",
+    "whatIKnow": [
+      "Javascript",
+      "HTML",
+      "CSS",
+      "And more..."
     ],
     "Why2": [
       "Aliquip ex ea commodo",
@@ -153,8 +153,8 @@
   ],
   "Contact": {
     "address": "4321 California St, San Francisco, CA 12345 ",
-    "phone": "+1 123 456 1234",
-    "email": "info@company.com",
+    "phone": "+852 96323157",
+    "email": "linuscyldev@gmail.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
     "youtube": "youtube.com"
