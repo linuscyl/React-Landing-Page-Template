@@ -14,6 +14,7 @@ import { Services } from "./components/services";
 import { Contact } from "./components/contact";
 import { useState, useEffect } from "react";
 import JsonData from "./data/data.json";
+import { WorkingExperience } from "./components/WorkingExperience";
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
@@ -26,6 +27,7 @@ const App = () => {
       {/* <Features data={landingPageData.Features} /> */}
       <About data={landingPageData.About} />
       <Services data={landingPageData.Services} />
+      <WorkingExperience />
       {/* <Gallery data={landingPageData.Gallery}/> */}
       {/* <Testimonials data={landingPageData.Testimonials} /> */}
       {/* <Team data={landingPageData.Team} /> */}

@@ -1,7 +1,7 @@
-export const User = (props) => {
+export const WorkingExperience = (props) => {
   return (
-    <div>
-      <h1>This is User!</h1>
+    <div id="WorkingExperience">
+      <h1>Working Expeience</h1>
       <div class="container">
         <div class="row">
           <div class="col-xs-6 col-md-4">
