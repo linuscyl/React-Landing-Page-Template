@@ -1,13 +1,13 @@
-import { Navigation } from "./components/navigation";
+// import { Navigation } from "./components/navigation";
 import "./App.css";
-import Home from "./components/Home";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-import { User } from "./components/User";
+// import Home from "./components/Home";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+//   Link
+// } from "react-router-dom";
+// import { User } from "./components/User";
 import { Header } from "./components/header";
 import { About } from "./components/about";
 import { Services } from "./components/services";
