@@ -1,6 +1,6 @@
 export const Navigation = (props) => {
   return (
-    <nav id='menu' className='navbar navbar-default navbar-fixed-top' style={{ position: "relative" }}>
+    <nav id='menu' className='navbar navbar-default navbar-fixed-top' style={{ position: "fixed" }}>
       <div className='container'>
         <div className='navbar-header'>
           <button

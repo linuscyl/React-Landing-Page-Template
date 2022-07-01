@@ -1,7 +1,7 @@
 {
   "Header": {
     "title": "Hi there, my name is Linus.=]",
-    "paragraph": "This page is developed by ReactJs. CICD by Buddy.  Hosted in S3 bucket."
+    "paragraph": "This page is developed by ReactJs. CICD by Github.  Hosted in AWS S3."
   },
   "About": {
     "paragraph": "My name is Linus.  I am a frontend-developer.",
