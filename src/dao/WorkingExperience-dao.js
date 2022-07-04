@@ -15,6 +15,6 @@ export const getWorkingExperience = async() =>{
         let temp = await axios.get(process.env.REACT_APP_S3_ASSET_URL + 'Companies/working-experience.json');
         return temp.data.data
     } catch (error) {
-        console.log("error 19")
+        console.log("error")
     }
 }

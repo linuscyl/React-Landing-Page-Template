@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import emailjs from 'emailjs-com'
+import { sendEmailToLinusMailClient } from '../dao/Contact-dao'
 
 const initialState = {
   name: '',
@@ -18,19 +19,10 @@ export const Contact = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(name, email, message)
-    emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID'
-      )
-      .then(
-        (result) => {
-          console.log(result.text)
-          clearState()
-        },
-        (error) => {
-          console.log(error.text)
-        }
-      )
+    sendEmailToLinusMailClient(name, email, message).then((res)=>{
+      console.log(res);
+      clearState()
+    });
   }
   return (
     <div>
