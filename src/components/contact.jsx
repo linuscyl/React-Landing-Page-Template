@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import emailjs from 'emailjs-com'
 import { sendEmailToLinusMailClient } from '../dao/Contact-dao'
 
 const initialState = {

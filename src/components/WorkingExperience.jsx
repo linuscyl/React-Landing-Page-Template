@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { getWorkingExperience } from "../dao/WorkingExperience-dao";
 import styled from 'styled-components';
+import {
+  Link
+} from "react-router-dom";
 
 const WorkingExperienceContent = styled.div`
   .row{
@@ -30,13 +33,15 @@ export const WorkingExperience = (props) => {
         <div className="container">
           <div className="row">
             {workingExperiences && workingExperiences.map((workingExperience) =>
-              <div className="col-xs-6 col-md-4" key={workingExperience.companyName}>
-                <div className="thumbnail">
-                  <img src={getCompanyLogoPath(workingExperience.companyName)} alt="placeholder" />
-                  <div className="caption">
-                    <h3>{workingExperience.companyName}</h3>
+              <div className="col-xs-6 col-md-4" key={workingExperience.companyId}>
+                <Link to={`projects?companyId=${workingExperience.companyId}`}>
+                  <div className="thumbnail">
+                    <img src={getCompanyLogoPath(workingExperience.companyName)} alt="placeholder" />
+                    <div className="caption">
+                      <h3>{workingExperience.companyName}</h3>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             )}
           </div>

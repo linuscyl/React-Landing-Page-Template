@@ -13,16 +13,38 @@ import {
 } from "react-router-dom";
 // import Home from './components/Home';
 import { User } from './components/User';
+import { Projects } from './components/Projects';
+import styled, {ThemeProvider} from 'styled-components';
+
+const TempContent = styled.div`
+  max-width: 1280px;
+  margin: auto;
+`;
+
+const theme = {
+  breakpoints: {
+    xs: 0,
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xl: 1200,
+  },
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navigation />
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="user" element={<User />} />
-      </Routes>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Navigation />
+      <TempContent>
+        <Router>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="user" element={<User />} />
+            <Route path="projects" element={<Projects />} />
+          </Routes>
+        </Router>
+      </TempContent>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

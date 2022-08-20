@@ -12,8 +12,17 @@ export const getThingsFromAPILambdaDynamoDB = async() =>{
 
 export const getWorkingExperience = async() =>{
     try {
-        let temp = await axios.get(process.env.REACT_APP_S3_ASSET_URL + 'Companies/working-experience.json');
-        return temp.data.data
+        let result = await axios.get(process.env.REACT_APP_S3_ASSET_URL + 'Companies/working-experience.json');
+        return result.data.data
+    } catch (error) {
+        console.log("error")
+    }
+}
+
+export const getProjects = async(companyName) =>{
+    try {
+        let result = await axios.get(process.env.REACT_APP_S3_ASSET_URL + `Projects/${companyName}.json`);
+        return result.data
     } catch (error) {
         console.log("error")
     }
