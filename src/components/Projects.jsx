@@ -1,28 +1,15 @@
 import { useState, useEffect } from "react";
 import styled from 'styled-components';
-import breakpoint from 'styled-components-breakpoint';
+// import breakpoint from 'styled-components-breakpoint';
 import { getProjects } from "../dao/WorkingExperience-dao";
 import * as dayjs from 'dayjs'
 
 const ProjectsContent = styled.div`
   .project-content-container{
-    ${breakpoint('xs')`
-      display: block;
-    `};
-    ${breakpoint('md')`
-      display: flex;
-    `}
   };
   .project-thumbnail-container{
     display: flex;
     justify-content: center;
-    ${breakpoint('xs')`
-      width:100%;
-    `};
-    ${breakpoint('md')`
-      width: 40%;
-      border-right: 1px solid #CFCFCF;
-    `}
     .project-thumbnail{
       width: 100%;
       max-width: 250px;
@@ -31,12 +18,6 @@ const ProjectsContent = styled.div`
   .project-detail{
     display: block;
     padding: 0 2rem;
-    ${breakpoint('xs')`
-      width:100%;
-    `};
-    ${breakpoint('md')`
-      width:60%;
-    `}
   };
 `;
 
