@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 const WorkingExperienceContent = styled.div`
+  padding: ${props => props.theme.contentPadding};
   .row{
     display: flex;
     justify-content: center;

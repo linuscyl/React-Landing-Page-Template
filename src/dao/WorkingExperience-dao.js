@@ -11,11 +11,12 @@ export const getThingsFromAPILambdaDynamoDB = async() =>{
 }
 
 export const getWorkingExperience = async() =>{
+
     try {
         let result = await axios.get(process.env.REACT_APP_S3_ASSET_URL + 'Companies/working-experience.json');
         return result.data.data
     } catch (error) {
-        console.log("error")
+        console.log("error");
     }
 }
 
@@ -24,6 +25,7 @@ export const getProjects = async(companyName) =>{
         let result = await axios.get(process.env.REACT_APP_S3_ASSET_URL + `Projects/${companyName}.json`);
         return result.data
     } catch (error) {
-        console.log("error")
+        console.log("error");
+        window.location = '/page-not-found'
     }
 }

@@ -17,12 +17,13 @@ export const Contact = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(name, email, message)
     sendEmailToLinusMailClient(name, email, message).then((res)=>{
-      console.log(res);
-      clearState()
+      if (res.status === 200) {
+        clearState();
+      }
     });
   }
+
   return (
     <div>
       <div id='contact'>
@@ -48,6 +49,7 @@ export const Contact = (props) => {
                         placeholder='Name'
                         required
                         onChange={handleChange}
+                        value={name}
                       />
                       <p className='help-block text-danger'></p>
                     </div>
@@ -62,6 +64,7 @@ export const Contact = (props) => {
                         placeholder='Email'
                         required
                         onChange={handleChange}
+                        value={email}
                       />
                       <p className='help-block text-danger'></p>
                     </div>
@@ -76,6 +79,7 @@ export const Contact = (props) => {
                     placeholder='Message'
                     required
                     onChange={handleChange}
+                    value={message}
                   ></textarea>
                   <p className='help-block text-danger'></p>
                 </div>

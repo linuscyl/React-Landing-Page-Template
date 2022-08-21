@@ -15,35 +15,38 @@ import {
 import { User } from './components/User';
 import { Projects } from './components/Projects';
 import styled, {ThemeProvider} from 'styled-components';
+import { NotFoundPage } from './components/NotFoundPage';
 
-const TempContent = styled.div`
+const MainThemePrivider = styled.div`
   max-width: 1280px;
   margin: auto;
 `;
 
 const theme = {
   breakpoints: {
-    xs: 0,
-    sm: 576,
-    md: 768,
-    lg: 992,
-    xl: 1200,
+    xs: "0px",
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
   },
+  contentPadding: "1rem 5rem"
 };
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Navigation />
-      <TempContent>
+      <MainThemePrivider>
         <Router>
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="user" element={<User />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="/*" element={<NotFoundPage/>} />
           </Routes>
         </Router>
-      </TempContent>
+      </MainThemePrivider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
