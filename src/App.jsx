@@ -10,7 +10,6 @@ import "./App.css";
 // import { User } from "./components/User";
 import { Header } from "./components/header";
 import { About } from "./components/about";
-import { Services } from "./components/services";
 import { Contact } from "./components/contact";
 import { useState, useEffect } from "react";
 import JsonData from "./data/data.json";
