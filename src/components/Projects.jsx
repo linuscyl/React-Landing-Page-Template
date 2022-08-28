@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from 'styled-components';
-// import breakpoint from 'styled-components-breakpoint';
 import { getProjects } from "../dao/WorkingExperience-dao";
-import * as dayjs from 'dayjs'
+import { convertTimestampToString } from "../common/commonUtil";
 
 const ProjectsContent = styled.div`
   padding: ${props => props.theme.contentPadding};
@@ -67,10 +66,6 @@ export const Projects = (props) => {
     const companyId = queryParams.get('companyId');
     getProjects(companyId).then((res) => setProjects(res))
   }, []);
-
- const convertTimestampToString = (timestamp) =>{
-   return dayjs.unix(timestamp).format('MMM YYYY');
- };
   
   return (
     <ProjectsContent>

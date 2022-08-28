@@ -18,7 +18,6 @@ import styled, {ThemeProvider} from 'styled-components';
 import { NotFoundPage } from './components/NotFoundPage';
 
 const MainThemePrivider = styled.div`
-  max-width: 1280px;
   margin: auto;
 `;
 
