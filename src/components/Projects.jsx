@@ -5,6 +5,9 @@ import { convertTimestampToString } from "../common/commonUtil";
 
 const ProjectsContent = styled.div`
   padding: ${props => props.theme.contentPadding};
+  .job-duties-unorder-list{
+    list-style-type: disc;
+  };
   .project-content-container{
     margin: 20px auto;
     @media (min-width: ${props => props.theme.breakpoints.xs}) {
@@ -58,6 +61,22 @@ const initProjectData ={
   ]
 }
 
+const getThumbnail = (project) => {
+  switch (project.thumbnailType) {
+    case "Image":
+      return <img className="project-thumbnail" src={project.projectThumbnail} alt={project.projectName} />
+
+    case "Youtube":
+      return <iframe title={project.projectName} className="project-thumbnail" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+
+    case "Video":
+      return <img className="project-thumbnail" src={project.projectThumbnail} alt={project.projectName} />
+
+    default:
+      return <img className="project-thumbnail" src={project.projectThumbnail} alt={project.projectName} />
+  }
+}
+
 export const Projects = (props) => {
   const [projects, setProjects] = useState(initProjectData)
 
@@ -72,11 +91,16 @@ export const Projects = (props) => {
       <h1>Company Name: {projects.companyName}</h1>
       <h3>Period: {convertTimestampToString(projects.startTime)} - {convertTimestampToString(projects.endTime)}</h3>
       <h3>Title: {projects.title}</h3>
-      <h3>Job Duty: {projects.jobDuty}</h3>
+      <h3>Job Duty:</h3>
+      <ul className="job-duties-unorder-list">
+        {projects.jobDuties && projects.jobDuties.map((jobDuty) => 
+           <li>{jobDuty}</li>
+        )}
+      </ul>
       {projects.projects.map((project) => 
         <div className="project-content-container" key={project.projectId}>
         <div className="project-thumbnail-container">
-          <img className="project-thumbnail" src={project.projectThumbnail} alt={project.projectName} />
+          {getThumbnail(project)}
         </div>
         <div className="project-detail">
           <div className="project-name">
