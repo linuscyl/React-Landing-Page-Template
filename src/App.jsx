@@ -1,5 +1,6 @@
 // import { Navigation } from "./components/navigation";
 import "./App.css";
+import "react-awesome-lightbox/build/style.css";
 // import Home from "./components/Home";
 // import {
 //   BrowserRouter as Router,
