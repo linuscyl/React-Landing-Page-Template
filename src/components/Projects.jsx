@@ -121,7 +121,7 @@ export const Projects = (props) => {
           </div>
           <div className="project-description">{project.projectDescription}</div>
           <div className="project-target-url">
-            <a href={project.targetUrl} alt="" target="_blank">
+            <a href={project.targetUrl} alt="" target="_blank" rel="noreferrer">
               {project.targetUrl}
             </a>
           </div>
