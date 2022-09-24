@@ -27,10 +27,11 @@ const ProjectsContent = styled.div`
     };
     @media (min-width: ${props => props.theme.breakpoints.sm}) {
       width: 40%;
-      border-right: 1px solid #CFCFCF;
+      height: fit-content
     };
     .project-thumbnail{
-      width: 100%;
+      width: auto;
+      height: 150px;
       max-width: 250px;
       cursor: pointer;
     }
@@ -43,8 +44,12 @@ const ProjectsContent = styled.div`
     };
     @media (min-width: ${props => props.theme.breakpoints.sm}) {
       width:60%;
+      border-left: 1px solid #CFCFCF;
     };
   };
+  .project-target-url{
+    padding-top: 2rem;
+  }
 `;
 
 const initProjectData ={
@@ -78,21 +83,19 @@ export const Projects = (props) => {
     switch (project.thumbnailType) {
       case "Image":
         if(isOpenLightBox){
-          return <Lightbox image={project.projectThumbnail} title="Image Title" onClose={()=>setisOpenLightBox(false)}></Lightbox>
+          return <Lightbox images={project.projectThumbnails} doubleClickZoom={0} onClose={()=>setisOpenLightBox(false)}></Lightbox>
         } else {
-          return <img className="project-thumbnail" src={project.projectThumbnail} alt={project.projectName} onClick={()=>setisOpenLightBox(true)}/>
+          return <img className="project-thumbnail" src={project.projectThumbnails[0]['url']} alt={project.projectName} onClick={()=>setisOpenLightBox(true)}/>
         }
   
       case "Youtube":
-        return <ReactPlayer url='https://www.youtube.com/embed/G-zyTlZQYpE?start=360' width="auto" height="auto" controls={true} />
-        // return <iframe title={project.projectName} className="project-thumbnail" src="https://www.youtube.com/embed/G-zyTlZQYpE?start=360" allowfullscreen></iframe>
-        // return <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/G-zyTlZQYpE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        return <ReactPlayer url={project.projectThumbnails[0]} width="auto" height="auto" controls={true} />
   
       case "Video":
-        return <img className="project-thumbnail" src={project.projectThumbnail} alt={project.projectName} />
+        return <img className="project-thumbnail" src={project.projectThumbnails} alt={project.projectName} />
   
       default:
-        return <img className="project-thumbnail" src={project.projectThumbnail} alt={project.projectName} />
+        return <img className="project-thumbnail" src={project.projectThumbnails} alt={project.projectName} />
     }
   }
   
@@ -104,10 +107,10 @@ export const Projects = (props) => {
       <h3>Job Duty:</h3>
       <ul className="job-duties-unorder-list">
         {projects.jobDuties && projects.jobDuties.map((jobDuty) => 
-           <li>{jobDuty}</li>
+           <li key={`${jobDuty}-key`}>{jobDuty}</li>
         )}
       </ul>
-      {projects.projects.map((project) => 
+      {projects && projects.projects && projects.projects.map((project) => 
         <div className="project-content-container" key={project.projectId}>
         <div className="project-thumbnail-container">
           <div className="project-thumbnail">{getThumbnail(project)}</div>
@@ -117,6 +120,11 @@ export const Projects = (props) => {
             <h3>{project.projectName}</h3>
           </div>
           <div className="project-description">{project.projectDescription}</div>
+          <div className="project-target-url">
+            <a href={project.targetUrl} alt="" target="_blank">
+              {project.targetUrl}
+            </a>
+          </div>
         </div>
       </div>
     )}
