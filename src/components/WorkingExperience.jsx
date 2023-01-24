@@ -11,9 +11,17 @@ const WorkingExperienceContent = styled.div`
     display: flex;
     justify-content: center;
   };
+  .wrap-cards{
+    flex-wrap: wrap
+  };
   .thumbnail{
     cursor: pointer;
   };
+  .company-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const getCompanyLogoPath = (companyName) =>{
@@ -32,14 +40,14 @@ export const WorkingExperience = (props) => {
       <div id="WorkingExperience">
         <h1>Working Expeience</h1>
         <div className="container">
-          <div className="row">
+          <div className="row wrap-cards">
             {workingExperiences && workingExperiences.map((workingExperience) =>
-              <div className="col-xs-6 col-md-4" key={workingExperience.companyId}>
+              <div className="col-xs-8 col-sm-6 col-md-4" key={workingExperience.companyId}>
                 <Link to={`projects?companyId=${workingExperience.companyId}`}>
                   <div className="thumbnail">
                     <img src={getCompanyLogoPath(workingExperience.companyName)} alt="placeholder" />
                     <div className="caption">
-                      <h3>{workingExperience.companyName}</h3>
+                      <h3 className="company-name">{workingExperience.companyName}</h3>
                     </div>
                   </div>
                 </Link>
