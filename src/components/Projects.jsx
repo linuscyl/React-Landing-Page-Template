@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { getProjects } from "../dao/WorkingExperience-dao";
 import { convertTimestampToString } from "../common/commonUtil";
 import Lightbox from "react-awesome-lightbox";
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player'
 
 const ProjectsContent = styled.div`
   padding: ${props => props.theme.contentPadding};
@@ -49,7 +49,16 @@ const ProjectsContent = styled.div`
   };
   .project-target-url{
     padding-top: 2rem;
-  }
+  };
+  .project-divider{
+    width: 100%;
+    @media (min-width: ${props => props.theme.breakpoints.sm}) {
+      display: none;
+    };
+  };
+
+}
+
 `;
 
 const initProjectData ={
@@ -92,7 +101,7 @@ export const Projects = (props) => {
         return <ReactPlayer url={project.projectThumbnails[0]} width="auto" height="auto" controls={true} />
   
       case "Video":
-        return <img className="project-thumbnail" src={project.projectThumbnails} alt={project.projectName} />
+        return <ReactPlayer url={project.projectThumbnails[0]} width="250px" height="100%" controls={true} />
   
       default:
         return <img className="project-thumbnail" src={project.projectThumbnails} alt={project.projectName} />
@@ -111,7 +120,8 @@ export const Projects = (props) => {
         )}
       </ul>
       {projects && projects.projects && projects.projects.map((project) => 
-        <div className="project-content-container" key={project.projectId}>
+      <div className="project-content-container" key={project.projectId}>
+        <hr className="project-divider"/>
         <div className="project-thumbnail-container">
           <div className="project-thumbnail">{getThumbnail(project)}</div>
         </div>
