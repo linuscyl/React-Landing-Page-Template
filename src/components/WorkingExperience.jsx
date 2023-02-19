@@ -16,7 +16,7 @@ const WorkingExperienceContent = styled.div`
   };
   .thumbnail{
     cursor: pointer;
-    box-shadow:1px 3px 5px -3px rgb(0 0 0 / 52%);
+    box-shadow:1px 3px 5px -3px ${props => props.theme.paletter.grey};
   };
   .company-name{
     white-space: nowrap;

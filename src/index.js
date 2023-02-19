@@ -29,7 +29,12 @@ const theme = {
     lg: "992px",
     xl: "1200px",
   },
-  contentPadding: "1rem 5rem"
+  contentPadding: "1rem 5rem",
+  paletter: {
+    grey: "#CCCCCC",
+    darkGrey: "#908787",
+    orange: "#FB5004"
+  }
 };
 
 ReactDOM.render(

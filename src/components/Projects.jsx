@@ -27,7 +27,10 @@ const ProjectsContent = styled.div`
     };
     @media (min-width: ${props => props.theme.breakpoints.sm}) {
       width: 40%;
-      height: fit-content
+      height: fit-content;
+      margin: 1rem 2rem;
+      padding: 1rem;
+      box-shadow: 0px 0px 5px ${props => props.theme.paletter.darkGrey};
     };
     .project-thumbnail{
       width: auto;
@@ -47,6 +50,9 @@ const ProjectsContent = styled.div`
       border-left: 1px solid #CFCFCF;
     };
   };
+  .project-description{
+    text-align: justify;
+  }
   .project-target-url{
     padding-top: 2rem;
   };
