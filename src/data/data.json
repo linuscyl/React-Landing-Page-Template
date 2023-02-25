@@ -1,10 +1,10 @@
 {
   "Header": {
-    "title": "Hi there, my name is Linus.=]",
+    "title": "Hello World",
     "paragraph": "This page is developed by ReactJs. CICD by Github.  Hosted in AWS S3."
   },
   "About": {
-    "paragraph": "My name is Linus.  I am a frontend-developer.",
+    "paragraph": "My name is Linus.  I recently graduated with a Master of Science in Information Technology, specializing in AI and fintech. I have extensive frontend development experience, specifically in financial website and e-commerce. I love designing and developing user-friendly interfaces that make financial transactions and online shopping a breeze. In my free time, I enjoy exploring the latest technology, the great outdoors, and good books. I'm a curious and driven individual who's always seeking out new challenges and opportunities to expand my horizons.",
     "whatIKnow": [
       "Javascript",
       "HTML",
