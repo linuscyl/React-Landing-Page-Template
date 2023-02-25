@@ -17,6 +17,13 @@ const WorkingExperienceContent = styled.div`
   .thumbnail{
     cursor: pointer;
     box-shadow:1px 3px 5px -3px ${props => props.theme.paletter.grey};
+    overflow: hidden;
+  };
+  .thumbnail img {
+    transition: 0.5s all ease-in-out;
+  }
+  .thumbnail:hover img {
+    transform: scale(1.2);
   };
   .company-name{
     white-space: nowrap;
