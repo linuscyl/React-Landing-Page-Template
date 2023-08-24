@@ -46,7 +46,7 @@ export const WorkingExperience = (props) => {
   return (
     <WorkingExperienceContent>
       <div id="WorkingExperience">
-        <h1>Working Expeience</h1>
+        <h1>Working Experience</h1>
         <div className="container">
           <div className="row wrap-cards">
             {workingExperiences && workingExperiences.map((workingExperience) =>
